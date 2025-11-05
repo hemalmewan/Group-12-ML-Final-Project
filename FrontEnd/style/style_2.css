@@ -1,0 +1,45 @@
+.hero-slider {
+    width: 100%;
+    height: 500px; /* adjust the height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* keeps image proportions like screenshot */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+.hero-slider .slides img.active {
+    opacity: 1;
+}
+
+/* Arrow Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.prev:hover, .next:hover {
+    opacity: 1;
+}
+
+.prev {
+    left: 20px;
+}
+.next {
+    right: 20px;
+}

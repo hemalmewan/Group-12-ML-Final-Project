@@ -1,0 +1,108 @@
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 15px;
+  margin: 0;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu ul li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: #d69d29;
+}
+
+/* ---------------- DROPDOWN MENU ---------------- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: #f6f6f6;          /* ✅ Light elegant dropdown background */
+    border: 1px solid #dcdcdc;    /* Soft border for separation */
+    border-radius: 8px;
+    
+    padding: 22px 30px;
+    display: none;                /* Hidden by default */
+    z-index: 1000;
+
+    flex-wrap: nowrap;
+    gap: 50px;
+    min-width: 600px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* ✅ Smooth shadow */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Column headings inside dropdown */
+.dropdown-column h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0b3d2e;  /* ✅ Matches your theme */
+    letter-spacing: 0.5px;
+}
+
+/* Delivery Section */
+.delivery-section {
+    text-align: center;
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.delivery-section h2 {
+    font-size: 36px;   /* Increased Font Size */
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 45px;
+    color: #0b3d2e; /* theme color */
+}
+
+/* Delivery Options Layout */
+.delivery-options {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+/* Each Delivery Box */
+.delivery-box {
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.delivery-box i {
+    font-size: 60px;  /* Increased Icon Size */
+    color: #d69d29; 
+    margin-bottom: 16px;
+}
+
+.delivery-box h4 {
+    margin: 0;
+    font-size: 20px;  /* Slightly Larger Text */
+    font-weight: 600;
+    color: #333;
+}
+
+/* Hover Effect */
+.delivery-box:hover {
+    transform: translateY(-6px);
+}
