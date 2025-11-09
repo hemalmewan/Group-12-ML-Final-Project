@@ -1,3 +1,8 @@
+body, html {
+    overflow-x: hidden;
+}
+/* ---------------- NAVIGATION MENU ---------------- */
+
 .nav-menu ul {
   list-style: none;
   display: flex;
@@ -105,4 +110,107 @@
 /* Hover Effect */
 .delivery-box:hover {
     transform: translateY(-6px);
+}
+
+/* ABOUT Dropdown Panel Styling */
+.dropdown-panel.about-panel {
+  position: absolute;
+  top: 100%;
+  left: 70%;
+  transform: translateX(-70%);
+  background: #ffffff;
+  padding: 25px 40px;
+  border-radius: 10px;
+  display: none;
+  justify-content: center;
+  gap: 60px;
+  width: max-content;
+  max-width: 90vw;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  z-index: 1000;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-panel.about-panel {
+  display: flex;
+}
+
+/* Individual About Items */
+.about-panel .about-item {
+  text-align: center;
+  max-width: 260px;
+}
+
+/* Icons */
+.about-panel .about-item img {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 12px;
+  transition: transform .3s ease;
+}
+
+/* Text Styles */
+.about-panel .about-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.about-panel .about-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hover Animation */
+.about-panel .about-item:hover img {
+  transform: scale(1.15);
+}
+
+/* Dataset Dropdown Panel */
+.dataset-panel {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    transform: translateX(-40%);
+    background: #ffffff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    display: none;
+    justify-content: center;
+    gap: 60px;
+    width: max-content;
+    max-width: 90vw;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    z-index: 999;
+}
+
+.dataset-item {
+    width: 270px;
+    text-align: center;
+}
+
+.dataset-item img {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.dataset-item h4 {
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dataset-item p {
+    font-size: 14px;
+    color: #4b4b4b;
+    line-height: 1.45;
+}
+
+/* Dropdown Hover */
+.dropdown:hover .dataset-panel {
+    display: flex;
 }
