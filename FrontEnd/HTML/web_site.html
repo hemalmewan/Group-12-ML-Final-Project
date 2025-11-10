@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../style/style_7.css" />
     <link rel="stylesheet" href="../style/style_8.css" />
     <link rel="stylesheet" href="../style/style_9.css" />
+    <link rel="stylesheet" href="../style/style_10.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../images/logo_furniture.jpeg">
@@ -19,8 +20,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
     
- <title>FurnishAI.lk</title>
+ <title>Online Furniture Store</title>
 </head>
 <body>
 
@@ -84,94 +88,140 @@
     </div>
 </li>
 
+<!-- ANALYSIS & INSIGHTS -->
+<li class="dropdown analysis-dropdown">
+  <a href="#">ANALYSIS & INSIGHTS <i class="fa-solid fa-chevron-down"></i></a>
 
-    <!-- ANALYSIS -->
-    <li class="dropdown">
-      <a href="#">ANALYSIS</a>
-      <div class="dropdown-menu">
+  <div class="analysis-list">
 
-        <div class="dropdown-column">
-          <h4>Dining Tables</h4>
-          <a href="#">Glassco Dining Table</a>
-          <a href="#">Harly Dining Table</a>
-          <a href="#">Liam Dining Table</a>
-          <a href="#">Trishia Dining Table</a>
-        </div>
-
-        <div class="dropdown-column">
-          <h4>Dining Chairs</h4>
-          <a href="#">Bethany Chair</a>
-          <a href="#">Brooks Chair</a>
-          <a href="#">Cessario Chair</a>
-          <a href="#">Clair Chair</a>
-          <a href="#">Clayton Chair</a>
-          <a href="#">Dante Chair</a>
-          <a href="#">Liam Chair</a>
-          <a href="#">Marcello Chair</a>
-          <a href="#">Miller Chair</a>
-          <a href="#">Reed Chair</a>
-          <a href="#">Regal Chair</a>
-        </div>
-
-        <div class="dropdown-column">
-          <h4>Credenzas</h4>
-          <a href="#">Regina Credenza</a>
-          <a href="#">Harly Credenza</a>
-
-          <h4 style="margin-top:14px;">Bar Stools</h4>
-          <a href="#">Bistro Bar Stool</a>
-        </div>
-
+    <div class="analysis-item">
+      <span><i class="fa-solid fa-chart-pie"></i> Delivery Performance Overview</span>
+      <div class="analysis-details">
+        <img src="../images/target_variable.png" alt="">
+        <p>This chart shows the overall proportion of orders classified as Delivered, Failed Delivery, and Ongoing. 
+          It helps identify the dominant outcome and any performance concerns in the fulfillment process.</p>
       </div>
-    </li>
+    </div>
 
-    <!-- MODELS -->
-    <li class="dropdown">
-      <a href="#">MODELS</a>
-      <div class="dropdown-menu">
-        <div class="dropdown-column">
-          <h4>Sofas</h4>
-          <a href="#">Recliner Sofa</a>
-          <a href="#">Sectional Sofa</a>
-          <a href="#">Leather Sofa</a>
-          <a href="#">Fabric Sofa</a>
-        </div>
-        <div class="dropdown-column">
-          <h4>Tables</h4>
-          <a href="#">Coffee Tables</a>
-          <a href="#">Side Tables</a>
-          <a href="#">Console Tables</a>
-        </div>
-        <div class="dropdown-column">
-          <h4>Storage</h4>
-          <a href="#">TV Units</a>
-          <a href="#">Bookshelves</a>
-          <a href="#">Storage Cabinets</a>
+    <div class="analysis-item">
+      <span><i class="fa-solid fa-layer-group"></i> Delivery Performance Across Product Categories</span>
+      <div class="analysis-details">
+        <img src="../images/delivery_product_category.png" alt="">
+        <p>This chart compares delivery outcomes across furniture categories, helping identify which product types 
+          are delivered reliably and which categories may encounter delays or failed deliveries.</p>
+      </div>
+    </div>
+
+    <div class="analysis-item">
+      <span><i class="fa-solid fa-tags"></i>Brand Performance in Delivery Outcomes</span>
+      <div class="analysis-details">
+        <img src="../images/delivery_brand.png" alt="">
+        <p>This visualization compares delivery success across different furniture brands. It helps identify reliable brands with 
+          consistent delivery performance and those that may require logistic or supply improvements.</p>
+      </div>
+    </div>
+
+    <div class="analysis-item">
+      <span><i class="fa-solid fa-sack-dollar"></i> Pricing and Category Impact on Delivery Outcomes</span>
+      <div class="analysis-details">
+        <img src="../images/delivery_product_price.png" alt="">
+        <p>This visualization highlights how product cost and category together influence delivery success. It helps reveal whether certain 
+          price ranges or furniture types are more prone to delays, rescheduling, or failed deliveries.</p>
+      </div>
+    </div>
+
+  </div>
+</li>
+
+
+
+
+  <!-- MODELS -->
+<li class="dropdown models-dropdown">
+  <a href="#">MODELS <i class="fa-solid fa-chevron-down"></i></a>
+
+  <div class="model-list">
+
+    <!-- AdaBoost (BEST MODEL) -->
+    <div class="model-item best-model">
+      <span>AdaBoost <span class="best-badge">BEST MODEL</span></span>
+      <div class="model-details">
+        <h3>AdaBoost Classifier</h3>
+        <p class="model-desc">Selected for balanced performance and generalization capability.</p>
+
+        <div class="metrics-box">
+          <div class="metric">
+            <h4>Accuracy</h4><p>40%</p>
+          </div>
+          <div class="metric">
+            <h4>Precision</h4><p>0.39</p>
+          </div>
+          <div class="metric">
+            <h4>Recall</h4><p>0.38</p>
+          </div>
+          <div class="metric">
+            <h4>F1 Score</h4><p>0.38</p>
+          </div>
         </div>
       </div>
-    </li>
+    </div>
+
+    <!-- Decision Tree -->
+    <div class="model-item">
+      <span>Decision Tree</span>
+      <div class="model-details">
+        <h3>Decision Tree Classifier</h3>
+        <p class="model-desc">Simple, interpretable tree-based model for decision making.</p>
+
+        <div class="metrics-box">
+          <div class="metric"><h4>Accuracy</h4><p>40%</p></div>
+          <div class="metric"><h4>Precision</h4><p>0.40</p></div>
+          <div class="metric"><h4>Recall</h4><p>0.39</p></div>
+          <div class="metric"><h4>F1 Score</h4><p>0.40</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Random Forest -->
+    <div class="model-item">
+      <span>Random Forest</span>
+      <div class="model-details">
+        <h3>Random Forest Classifier</h3>
+        <p class="model-desc">Ensemble of decision trees for stable prediction.</p>
+
+        <div class="metrics-box">
+          <div class="metric"><h4>Accuracy</h4><p>41%</p></div>
+          <div class="metric"><h4>Precision</h4><p>0.40</p></div>
+          <div class="metric"><h4>Recall</h4><p>0.40</p></div>
+          <div class="metric"><h4>F1 Score</h4><p>0.40</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XGBoost -->
+    <div class="model-item">
+      <span>XGBoost</span>
+      <div class="model-details">
+        <h3>XGBoost Classifier</h3>
+        <p class="model-desc">Gradient boosting approach for structured learning.</p>
+
+        <div class="metrics-box">
+          <div class="metric"><h4>Accuracy</h4><p>40%</p></div>
+          <div class="metric"><h4>Precision</h4><p>0.38</p></div>
+          <div class="metric"><h4>Recall</h4><p>0.39</p></div>
+          <div class="metric"><h4>F1 Score</h4><p>0.39</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</li>
+
+
 
     <!-- TRY IT OUT -->
     <li class="dropdown">
-      <a href="#">TRY IT OUT</a>
-      <div class="dropdown-menu">
-        <div class="dropdown-column">
-          <h4>Cabinets</h4>
-          <a href="#">Wall Cabinets</a>
-          <a href="#">Base Cabinets</a>
-          <a href="#">Tall Cabinets</a>
-        </div>
-        <div class="dropdown-column">
-          <h4>Kitchen Islands</h4>
-          <a href="#">Granite Island</a>
-          <a href="#">Wooden Island</a>
-        </div>
-        <div class="dropdown-column">
-          <h4>Seating</h4>
-          <a href="#">Bar Stools</a>
-          <a href="#">Breakfast Chairs</a>
-        </div>
-      </div>
+      <a href="#try-out">TRY IT OUT</a>
     </li>
 
     <li class="dropdown">
@@ -198,7 +248,7 @@
     </div>
 </li>
 
-    <li><a href="#">CONTACT</a></li>
+    <li><a href="#contact-section">CONTACT</a></li>
 
   </ul>
 </nav>
@@ -219,7 +269,7 @@
     </div>
 
     <!-- Delivery Methods Section -->
-      <section class="delivery-section">
+      <section class="delivery-section" data-aos="fade-up">
          <h2>Delivery Methods</h2>
 
     <div class="delivery-options">
@@ -239,60 +289,60 @@
 
     <!-- Best Selling Furniture Section -->
 
-   <section class="furniture-section">
+   <section class="furniture-section" >
     <h2>Best Selling Furniture</h2>
 
     <div class="furniture-grid">
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/modren sofa.jpeg" alt="Sofa">
             <p class="name">Modern Sofa</p>
             <p class="price">$499</p>
         </div>
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/woden chair.jpeg" alt="Chair">
             <p class="name">Wooden Chair</p>
             <p class="price">$129</p>
         </div>
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/dininng table.jpeg" alt="Table">
             <p class="name">Dining Table</p>
             <p class="price">$699</p>
         </div>
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/bed.jpeg" alt="Bed">
             <p class="name">King Size Bed</p>
             <p class="price">$899</p>
         </div>
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/pantry carbed.jpeg" alt="Cabinet">
             <p class="name">Pantry Cupboard</p>
             <p class="price">$350</p>
         </div>
 
-        <div class="item">
+        <div class="item" data-aos="fade-up">
             <img src="../images/Armchair.jpeg" alt="Armchair">
             <p class="name">Comfort Armchair</p>
             <p class="price">$220</p>
         </div>
 
-         <div class="item">
+         <div class="item" data-aos="fade-up">
             <img src="../images/corner sofa.jpg" alt="Armchair">
             <p class="name">Luxury Corner Sofa</p>
             <p class="price">$750</p>
         </div>
 
-         <div class="item">
+         <div class="item" data-aos="fade-up">
             <img src="../images/cabenet.jpeg" alt="Armchair">
             <p class="name">Classic Buffet Cabinet</p>
             <p class="price">$280</p>
         </div>
 
-         <div class="item">
+         <div class="item" data-aos="fade-up">
             <img src="../images/night stand.jpg" alt="Armchair">
             <p class="name">Elegant Nightstand</p>
             <p class="price">$160</p>
@@ -301,7 +351,7 @@
     </div>
 </section>
     <!-- Dining Room Section -->
-<section class="featured-section">
+<section class="featured-section" data-aos="fade-up">
   <div class="featured-text">
     <h2><span>Dining</span> Room Furniture</h2>
     <p>The dining room is the heart of your home, and we’ve got all the elements to create your ideal dining space. 
@@ -328,7 +378,7 @@
 </section>
 
     <!-- Living Room Section -->
-   <section class="featured-section">
+   <section class="featured-section" data-aos="fade-up">
   <div class="featured-text">
     <h2><span>Living</span> Room Furniture</h2>
     <p>Create the perfect hangout space with our comfortable sofas and stylish tables, 
@@ -354,8 +404,90 @@
   </div>
 </section>
 
+<section class="prediction-form" id="try-out" data-aos="fade-up">
+  <h2>Predict Delivery Status</h2>
+
+  <form>
+
+    <div class="form-row">
+      <!-- Brand Name -->
+      <div class="form-group">
+        <label for="brand">Brand Name</label>
+        <select id="brand" required>
+          <option value="Affordable">Affordable</option>
+          <option value="Mid Range">Mid Range</option>
+          <option value="Premium">Premium</option>
+        </select>
+      </div>
+
+      <!-- Assembly Requested -->
+      <div class="form-group">
+        <label for="assembly">Assembly Requested</label>
+        <select id="assembly" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <!-- Product Category -->
+      <div class="form-group">
+        <label for="category">Product Category</label>
+        <select id="category" required>
+          <option value="Outdoor">Outdoor</option>
+          <option value="Office">Office</option>
+          <option value="Living Room">Living Room</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Bedroom">Bedroom</option>
+          <option value="Dining">Dining Room</option>
+        </select>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="form-group">
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+          <option value="Digital Wallet">Digital Wallet</option>
+          <option value="Card">Card</option>
+          <option value="Cash">Cash</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <!-- Payment Timing -->
+      <div class="form-group">
+        <label for="timing">Payment Timing</label>
+        <select id="timing" required>
+          <option value="Prepaid">Prepaid</option>
+          <option value="Postpaid">Postpaid</option>
+        </select>
+      </div>
+
+      <!-- Product Sub Category -->
+      <div class="form-group">
+        <label for="subcategory">Product Sub Category</label>
+        <select id="subcategory" required>
+          <option value="storage">Storage</option>
+          <option value="seating">Seating</option>
+          <option value="table">Table</option>
+          <option value="work">Work</option>
+          <option value="sleeping">Sleeping</option>
+          <option value="patio furniture">Patio Furniture</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="predict-btn">Predict</button>
+
+  </form>
+</section>
+
+
 <!-- Our Commitment Section -->
-<section class="info-section reverse">
+<section class="info-section reverse" data-aos="fade-up">
     <div class="info-content">
         <div class="info-text">
             <h2>Our Commitment</h2>
@@ -389,29 +521,29 @@
 </section>
 
           <!-- Team Members Section -->
-<section class="team-section">
+<section class="team-section" data-aos="fade-up">
     <h2 class="team-title">Meet Our Team</h2>
 
-    <div class="team-container">
+    <div class="team-container" >
 
         <!-- Team Member 1 -->
-        <div class="team-card">
+        <div class="team-card" data-aos="fade-up">
             <img src="../images/member1.jpg" alt="Hemal - Full Stack Developer">
-            <h3>Hemal</h3>
+            <h3>Hemal Mewantha</h3>
             <p class="role">Full Stack Developer</p>
         </div>
 
         <!-- Team Member 2 -->
-        <div class="team-card">
+        <div class="team-card" data-aos="fade-up">
             <img src="../images/member2.jpg" alt="Maheesha - Data Scientist">
-            <h3>Maheesha</h3>
+            <h3>Maheesha Sewmini</h3>
             <p class="role">Data Scientist</p>
         </div>
 
     </div>
 </section>
     <!-- Footer Section -->
-          <footer class="footer">
+          <footer class="footer" id="contact-section">
     <div class="footer-container">
 
         <!-- Brand & Contact -->
@@ -469,5 +601,14 @@
 
 
       <script src="../js/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+      <script>
+         AOS.init({
+         duration: 1000, /* animation speed */
+         once: true,     /* animation only once */
+         easing: 'ease-in-out'
+         });
+      </script>
+
 </body>
 </html>

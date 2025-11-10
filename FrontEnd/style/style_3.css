@@ -214,3 +214,271 @@ body, html {
 .dropdown:hover .dataset-panel {
     display: flex;
 }
+
+/* Analysis Dropdown Panel (same structure style) */
+.analysis-panel {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    display: none;
+    justify-content: center;
+    gap: 50px;
+    width: max-content;
+    max-width: 95vw;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    z-index: 999;
+    padding: 40px 60px;        /* Increased panel padding */
+    gap: 60px;  
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .analysis-panel {
+    display: flex;
+}
+
+/* Individual Chart Item */
+.analysis-item {
+    width: 230px;
+    text-align: center;
+}
+
+.analysis-item img {
+    width: 175px;
+    height: 175px;
+    margin-bottom: 15px;
+    transition: transform .35s ease, filter .35s ease;
+}
+
+/* Hover Animation */
+.analysis-item:hover img {
+    transform: scale(1.25);
+    filter: brightness(1.15);
+}
+
+.analysis-item h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.analysis-item p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #4b4b4b;
+}
+/* Show Model List on Hover */
+.models-dropdown:hover .model-list {
+  display: flex;
+}
+
+.model-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 18px 28px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  width: 220px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  z-index: 999;
+}
+
+/* Model Items */
+.model-item {
+  position: relative;
+  padding: 6px 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.model-item span {
+  font-size: 15px;
+  color: #111;
+  font-weight: 500;
+}
+
+.model-item:hover span {
+  color: #d69d29;
+}
+
+/* BEST MODEL Badge */
+.best-badge {
+  background: #d69d29;
+  color: white;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* Model Details Panel */
+.model-details {
+  display: none;
+  position: absolute;
+  left: 240px;
+  top: 0;
+  background: #ffffff;
+  border-left: 4px solid #0b3d2e;
+  padding: 18px 22px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.model-item:hover .model-details {
+  display: block;
+}
+
+/* Title + Description */
+.model-details h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #0b3d2e;
+  font-weight: 700;
+}
+
+.model-desc {
+  margin-bottom: 12px;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Metrics Display */
+.metrics-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metric {
+  background: #f6f6f6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 120px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.metric:hover {
+  background: #0b3d2e;
+  color: white;
+}
+
+.metric h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.metric p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: inherit;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(8px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* Dropdown container */
+.analysis-list {
+  position: absolute;
+  top: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  width: 330px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.22);
+  z-index: 999;
+}
+
+/* Show on hover */
+.analysis-dropdown:hover .analysis-list {
+  display: flex;
+}
+
+/* Title items */
+.analysis-item {
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.35s;
+  display: flex;
+  align-items: center;
+}
+
+.analysis-item span {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Title hover highlight */
+.analysis-item:hover {
+  background: rgba(214,157,41,0.13);
+  transform: translateX(6px);
+}
+
+/* Icons */
+.analysis-item i {
+  color: #0b3d2e;
+  font-size: 15px;
+}
+
+/* Details panel */
+.analysis-details {
+  display: none;
+  position: absolute;
+  left: 350px;
+  top: 0;
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+  border-left: 4px solid #0b3d2e;
+  padding: 18px 22px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.28);
+  animation: slideFade 0.4s ease;
+}
+
+.analysis-item:hover .analysis-details {
+  display: block;
+}
+
+/* Chart image */
+.analysis-details img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.analysis-details img:hover {
+  transform: scale(1.05);
+}
+
+/* Description */
+.analysis-details p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Animation */
+@keyframes slideFade {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
