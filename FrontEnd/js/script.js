@@ -52,28 +52,4 @@ backToTopBtn.addEventListener("click", () => {
 });
 
 
-// Prediction Form Submission
-document.querySelector("form").addEventListener("submit", async function(event){
-    event.preventDefault();
-
-    let inputData = {
-        brand: document.getElementById("brand").value,
-        assembly: document.getElementById("assembly").value,
-        product_category: document.getElementById("category").value,
-        payment_method: document.getElementById("payment").value,
-        payment_timing: document.getElementById("timing").value,
-        product_subcategory: document.getElementById("subcategory").value
-    };
-
-    let response = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(inputData)
-    });
-
-    let result = await response.json();
-
-    // Display result beautifully
-    alert("Predicted Delivery Status: " + result.delivery_status_prediction);
-});
 

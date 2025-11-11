@@ -258,9 +258,9 @@
     <div class="hero-slider">
 
         <div class="slides">
-             <img src="../images/Living Room.jpeg" class="active">
-            <img src="../images/bedroom.jpeg">
-            <img src="../images/office.jpeg">
+             <img src="../images/image-1.jpeg" class="active">
+            <img src="../images/image-2.jpeg">
+            <img src="../images/image-3.jpeg">
         </div>
 
          <button class="prev" onclick="moveSlide(-1)">❮</button>
@@ -405,36 +405,33 @@
 </section>
 
 <section class="prediction-form" id="try-out" data-aos="fade-up">
-  <h2>Predict Delivery Status</h2>
+  <h2 class="section-title">Predict Delivery Status</h2>
 
-  <form>
+  <form id="predictForm" class="form-card" action="http://127.0.0.1:8000/predict" method="post">
 
     <div class="form-row">
-      <!-- Brand Name -->
       <div class="form-group">
-        <label for="brand">Brand Name</label>
-        <select id="brand" required>
+        <label>Brand Name</label>
+        <select id="brand" name="brand" required>
           <option value="Affordable">Affordable</option>
           <option value="Mid Range">Mid Range</option>
           <option value="Premium">Premium</option>
         </select>
       </div>
 
-      <!-- Assembly Requested -->
       <div class="form-group">
-        <label for="assembly">Assembly Requested</label>
-        <select id="assembly" required>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
+        <label>Assembly Requested</label>
+        <select id="assembly"  name="assembly" required>
+          <option value="Yes">True</option>
+          <option value="No">False</option>
         </select>
       </div>
     </div>
 
     <div class="form-row">
-      <!-- Product Category -->
       <div class="form-group">
-        <label for="category">Product Category</label>
-        <select id="category" required>
+        <label>Product Category</label>
+        <select id="category" name="category" required>
           <option value="Outdoor">Outdoor</option>
           <option value="Office">Office</option>
           <option value="Living Room">Living Room</option>
@@ -444,10 +441,9 @@
         </select>
       </div>
 
-      <!-- Payment Method -->
       <div class="form-group">
-        <label for="payment">Payment Method</label>
-        <select id="payment" required>
+        <label>Payment Method</label>
+        <select id="payment" name="payment" required>
           <option value="Digital Wallet">Digital Wallet</option>
           <option value="Card">Card</option>
           <option value="Cash">Cash</option>
@@ -457,19 +453,17 @@
     </div>
 
     <div class="form-row">
-      <!-- Payment Timing -->
       <div class="form-group">
-        <label for="timing">Payment Timing</label>
-        <select id="timing" required>
+        <label>Payment Timing</label>
+        <select id="timing" name="timing" required>
           <option value="Prepaid">Prepaid</option>
           <option value="Postpaid">Postpaid</option>
         </select>
       </div>
 
-      <!-- Product Sub Category -->
       <div class="form-group">
-        <label for="subcategory">Product Sub Category</label>
-        <select id="subcategory" required>
+        <label>Product Sub Category</label>
+        <select id="subcategory" name="subcategory" required>
           <option value="storage">Storage</option>
           <option value="seating">Seating</option>
           <option value="table">Table</option>
@@ -480,9 +474,42 @@
       </div>
     </div>
 
+    <div class="form-row">
+      <div class="form-group">
+        <label>Product Price ($)</label>
+        <input type="number" name="price" id="price" min="0" placeholder="Enter product price" required>
+      </div>
+
+      <div class="form-group">
+        <label>Shipping Cost ($)</label>
+        <input type="number" name="shipping" id="shipping" min="0" placeholder="Enter shipping cost" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Assembly Cost ($)</label>
+        <input type="number" name="assembly_cost" id="assembly_cost" min="0" placeholder="Enter assembly cost" required>
+      </div>
+
+      <div class="form-group">
+        <label>Delivery Window (Days)</label>
+        <input type="number" name="delivery_days" id="delivery_days" min="1" placeholder="Expected delivery days" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group" style="width:48%;">
+        <label>Customer Rating</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" step="0.1" placeholder="Enter rating" required>
+      </div>
+    </div>
+
     <button type="submit" class="predict-btn">Predict</button>
 
   </form>
+
+  <div id="prediction-result" class="result-box"></div>
 </section>
 
 
@@ -608,7 +635,67 @@
          once: true,     /* animation only once */
          easing: 'ease-in-out'
          });
+                        
+            document.getElementById("predictForm").addEventListener("submit", function(e) {
+              e.preventDefault(); // Prevent form from refreshing the page
+
+              let form = document.getElementById("predictForm");
+              let formData = new FormData(form);
+
+              fetch("http://127.0.0.1:8000/predict", {
+                  method: "POST",
+                  body: formData
+              })
+              .then(response => response.json())
+              .then(result => {
+
+                  // Convert label to CSS-safe class
+                  const statusClass = result.predicted_delivery_status.replace(/\s+/g, "-").toLowerCase();
+
+                  // Select icon based on prediction result
+                  const icon = 
+                        result.predicted_delivery_status === "Delivered" ? "✅"
+                      : result.predicted_delivery_status === "Failed Delivery" ? "❌"
+                      : "⏳";
+
+                  // Inject prediction result card
+                  document.getElementById("prediction-result").innerHTML = `
+                      <div class="prediction-card ${statusClass}">
+                          <div class="icon">${icon}</div>
+                          <div class="text">
+                              <h3>${result.predicted_delivery_status}</h3>
+                              <p>This prediction is based on selected input attributes.</p>
+                          </div>
+                      </div>
+                  `;
+
+                  document.getElementById("prediction-result").style.display = "flex";
+
+                  // Smooth scroll to the displayed result
+                  document.getElementById("prediction-result").scrollIntoView({ 
+                      behavior: "smooth" 
+                  });
+
+              })
+              .catch(error => {
+                  document.getElementById("prediction-result").innerHTML = `
+                      <div class="prediction-card error">
+                          <div class="icon">⚠️</div>
+                          <div class="text">
+                              <h3>Error</h3>
+                              <p>Unable to get prediction. Please try again.</p>
+                          </div>
+                      </div>
+                  `;
+                  document.getElementById("prediction-result").style.display = "flex";
+                  console.error(error);
+              });
+          });
+
+        
       </script>
+
+
 
 </body>
 </html>
