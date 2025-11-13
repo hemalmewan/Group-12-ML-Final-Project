@@ -15,3 +15,4 @@ class DeliveryInput(BaseModel):
     assembly_cost:float
     delivery_time_days:float
     customer_rating:float
+

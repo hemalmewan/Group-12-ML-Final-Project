@@ -1,0 +1,30 @@
+Hello and welcome to Furnish AI — your intelligent furniture companion that blends design, technology, and artificial intelligence to transform how you shop for furniture. Furnish AI isn’t just a website — it’s a smart platform built to help you explore furniture effortlessly, understand delivery reliability, and make confident purchasing decisions. Let’s take a quick tour of our application.
+
+First, let’s begin with the Dataset Overview.
+Our dataset forms the backbone of Furnish Ai's delivery prediction system, containing 1,938 detailed furniture delivery records across 14 key attributes, including product details, pricing, shipping, assembly, and customer ratings.
+We simplified six original delivery outcomes into three categories — Delivered, Failed Delivery, and Ongoing — improving both accuracy and clarity.
+These insights helped us build models that enhance logistics reliability and support smarter business decisions.
+
+Next, under the About section, we share our vision — to create a seamless connection between customers and smart furniture technology. Furnish AI enhances every shopping journey with AI-driven insights, bringing comfort, transparency, and trust to every purchase.
+
+In the Delivery Methods section, we showcase how our logistics system works. We offer standard, express, and scheduled delivery with optional home assembly.
+Our AI monitors routes, delivery partners, and regional conditions in real time to ensure on-time and reliable delivery predictions.
+
+Moving on to what we offer — Furnish AI features an extensive range of products: sofas, office chairs, dining sets, wardrobes, and even smart, space-saving modular furniture.
+We also promote eco-friendly designs and seasonal discounts to give customers more value and sustainability.
+
+Now, the heart of our project — the AI Delivery Prediction System.
+We trained several models, including Random Forest, XGBoost, Decision Tree and AdaBoost, but our top performer was the AdaBoost Classifier, delivering the best accuracy in predicting delivery outcomes.
+
+Finally, let’s look at our Prediction Form.
+Users can enter their order details and instantly see their predicted delivery status.
+
+demonstration example 01:After clicking Predict, the system quickly returns the result — ‘Delivered’ — meaning the order is likely to reach the customer on time. This shows how efficient and reliable our AI model is for confident decision-making.”
+
+demonstration example 02:Once we hit Predict, the model displays the result — ‘Failed Delivery’, indicating a potential issue such as delivery delay or customer rejection. This allows businesses to take preventive actions before problems occur — saving both time and customer satisfaction.”
+
+At Furnish AI, our commitment goes beyond technology — it’s about trust, innovation, and sustainability.
+Our talented team — Hemal, the Full Stack Developer behind the elegant interface, and Maheesha, the Data Scientist powering the AI models — proudly built this system from the ground up.
+
+If you’d like to learn more or collaborate, visit the Contact section on our site.
+Thank you for exploring Furnish AI — where design meets intelligence, and every furniture purchase becomes a smarter experience.

@@ -1,0 +1,44 @@
+1. About Furnish AI
+Furnish AI is an intelligent furniture e-commerce solution designed to enhance customer experience through predictive logistics and data-driven insights.
+It combines real-time analytics, machine learning, and smart automation to optimize order handling, minimize delivery delays, and improve overall satisfaction.
+The platform not only simplifies online furniture shopping but also offers proactive insights into delivery performance, helping brands maintain reliability and trust.
+
+2. Delivery Prediction System
+
+Our AI-powered Delivery Prediction System intelligently forecasts the likelihood of successful or delayed furniture deliveries by analyzing historical data, customer behavior, and logistics patterns across thousands of transactions. The system adapts dynamically to multiple influencing factors such as seasonal demand, product type, order density, and regional warehouse performance. This ensures that every delivery prediction is accurate, timely, and actionable for both customers and logistics partners.
+
+The prediction model considers a variety of key variables, including product category and subcategory, shipping and assembly costs, payment method and timing, brand reliability, and historical customer ratings. Each of these features contributes valuable insight into delivery behavior and helps refine the prediction accuracy. By leveraging the AdaBoost classifier as our final model, we achieved consistent and stable performance, particularly in differentiating between three critical delivery outcomes — Delivered, Failed Delivery, and Ongoing.
+
+Our platform supports a wide range of furniture collections spanning six primary categories: Living Room, Bedroom, Dining Room, Office, Outdoor, and Kitchen. Living room collections include stylish sofas, recliners, and coffee tables designed from premium hardwood and fabric blends. Bedroom ranges feature elegant beds, wardrobes, and nightstands with smart storage options. Dining room furniture combines functionality and elegance with solid wood tables and matching chairs. For offices, we offer ergonomic chairs, height-adjustable desks, and compact storage units to enhance productivity. Outdoor furniture such as patio sets, garden lounges, and swing chairs are crafted from weather-resistant, eco-friendly materials. Finally, our kitchen section includes modular units, bar stools, and multi-purpose cabinets to maximize space efficiency.
+
+To encourage purchases and improve customer engagement, we provide personalized seasonal discounts and AI-driven promotions. These include up to 15% off living room collections during seasonal sales, Buy One Get One Half Off on office chairs for corporate orders, and Eco Bonuses for customers choosing sustainable products or carbon-neutral delivery. During festive periods, premium bedroom furniture is offered at discounts of up to 40%, and prepaid orders above $500 qualify for free delivery and assembly. These offers are incorporated into our pricing and prediction models, allowing us to forecast not only delivery success but also the likelihood of purchase conversions.
+
+Our analytics also capture and learn from emerging furniture trends in the global market. Current trends for 2025 include the rise of smart furniture such as wireless-charging desks, modular sofas that can be easily rearranged, and the increasing popularity of sustainable materials like bamboo and reclaimed wood. Compact, multi-functional designs are becoming essential for modern apartments, with foldable tables and convertible sofa beds leading the way. Meanwhile, luxury minimalism — defined by simple aesthetics and high-quality finishes such as marble and oak veneer — continues to dominate interior design. The demand for ergonomic office furniture also remains strong, reflecting the hybrid-work lifestyle that continues to shape consumer needs.
+
+Understanding these design and market trends directly enhances our delivery forecasting accuracy. For example, high-demand modular furniture during seasonal sales tends to show a slightly higher probability of delay due to increased order volume. In contrast, prepaid luxury items typically experience the most reliable delivery rates, and outdoor furniture deliveries can vary depending on regional weather conditions. By analyzing these subtle patterns, the FurnishAI system helps logistics teams optimize resources, anticipate challenges, and deliver a seamless and efficient customer experience.
+3. Machine Learning Workflow
+The ML pipeline consists of:
+Data preprocessing: Handling missing values, encoding categorical variables using OneHot and Ordinal encoders.
+Balancing data: Using SMOTE to address delivery-class imbalance.
+Model selection: Testing multiple algorithms, including Decision Tree, Random Forest, XGBoost, and AdaBoost.
+Evaluation metrics: Accuracy, Precision, Recall, and F1-Score are used to assess performance.
+The AdaBoost model performed best with stable generalization on unseen orders, achieving strong recall for failed deliveries — an essential metric for business value.
+
+4. Sustainability & Eco-Friendliness
+Furnish AI promotes sustainable logistics and product lifecycle awareness.
+Optimizing delivery routes and predicting failed shipments early helps reduce unnecessary fuel use and carbon emissions.
+Additionally, the platform encourages furniture brands to adopt environmentally responsible sourcing, packaging, and return policies — fostering harmony between design, efficiency, and environmental care.
+
+5. Human Impact & Customer Experience
+Our system is built around human-centered AI.
+Anticipating delivery issues, it enables customer support teams to take proactive action — informing customers early, offering rescheduling options, and maintaining transparency.
+Furniture delivery becomes less stressful, and customers gain confidence in reliable service.
+The AI-driven insights also help businesses identify operational bottlenecks, employee workload patterns, and regional logistics challenges.
+
+6. Future Vision
+Furnish AI is continuously evolving. Future updates will include:
+Real-time route optimization using geospatial analytics
+AI chatbots integrated with RAG systems to provide intelligent, context-aware support
+Personalized delivery estimates for each customer
+Predictive maintenance for delivery vehicles and smart warehouse automation
+By merging data, design, and dependability, Furnish AI aims to redefine how furniture reaches homes — faster, smarter, and greener.

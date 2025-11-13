@@ -5,7 +5,6 @@ import pickle
 import pandas as pd 
 from fastapi.middleware.cors import CORSMiddleware
 
-
 # Load trained pipeline model
 model = pickle.load(open("../best_model/best_adaboost_model.pkl", "rb"))
 
@@ -67,8 +66,5 @@ def predict_delivery_status(
 
     # Return result as JSON
     return {"predicted_delivery_status": prediction}
-
-
-
 
 
